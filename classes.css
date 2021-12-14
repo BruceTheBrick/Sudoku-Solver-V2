@@ -1,0 +1,25 @@
+:root {
+  --background-color: #071521;
+  --color-primary: #0067a3;
+  --color-primary-lighter: #acc5d8;
+  --color-primary-darker: #004166;
+  --color-secondary: #043e62;
+  --color-pink: #f49097;
+  --color-accent: #ffa400;
+  --color-board-background: #0067a3;
+  --shadow: 0 6px 8px rgba(0, 0, 0, 0.1);
+  --border-soft: 5px;
+  --border-round: 100px;
+  --border-circle: 100%;
+
+  --space-xs: 0.25rem;
+  --space-s: 0.5rem;
+  --space-m: 1rem;
+  --space-l: 1.5rem;
+}
+
+.vertical-align-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

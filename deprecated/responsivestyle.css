@@ -1,0 +1,144 @@
+* {
+  box-sizing: border-box;
+  margin: 0px;
+  padding: 0px;
+}
+
+:root {
+  --background-color: #2d2d2d;
+  --color-primary: #4a7b9d;
+  --color-primary-lighter: #acc5d8;
+  --color-primary-darker: #436f8e;
+  --color-secondary: #aef6c7;
+  --color-accent: #a63446;
+  --shadow: 0 6px 8px rgba(0, 0, 0, 0.1);
+  --border-soft: 5px;
+  --border-round: 100px;
+
+  --space-xs: 0.25rem;
+  --space-s: 0.5rem;
+  --space-m: 1rem;
+  --space-l: 1.5rem;
+}
+
+body {
+  background-color: var(--background-color);
+  font-family: "Montserrat", sans-serif;
+}
+
+.header {
+  text-align: center;
+  margin: auto;
+  padding: 1rem;
+  color: var(--color-secondary);
+}
+.content {
+  display: grid;
+  padding: 2rem;
+  grid-template-columns: auto 70%;
+  grid-template-areas: "c b b";
+}
+
+.controls {
+  display: flex;
+  flex-direction: column;
+  grid-area: c;
+}
+
+.board {
+  background-color: var(--color-primary);
+  flex-direction: column;
+  border-radius: var(--border-soft);
+  padding: 1rem;
+  margin: auto;
+  grid-area: b;
+  max-height: 100vh;
+}
+
+.row {
+  display: flex;
+}
+
+.section {
+  border: 1px solid var(--color-primary-lighter);
+  padding: var(--space-m);
+  border-radius: var(--border-soft);
+}
+
+.section--row {
+  display: flex;
+}
+
+.cell {
+  font-size: 1rem;
+  border-radius: var(--border-round);
+  background: linear-gradient(145deg, #4f84a8, #436f8d);
+  box-shadow: 5px 5px 9px #426d8c, -5px -5px 9px #5289ae;
+  color: white;
+  font-weight: bold;
+  height: 5vmin;
+  width: 5vmin;
+}
+
+.cell.default {
+  background: var(--color-primary-darker);
+  box-shadow: inset 7px 7px 14px #2f4e63, inset -7px -7px 14px #5790b9;
+}
+
+.btn {
+  padding: 0.5rem;
+  font-size: 1rem;
+  background-color: var(--color-secondary);
+  border: 2px solid var(--color-primary);
+  border-radius: var(--border-round);
+  box-shadow: var(--shadow);
+  font-family: "Montserrat", sans-serif;
+  font-weight: bold;
+  flex-grow: 1;
+}
+
+.tooltip {
+  position: relative;
+  display: inline-block;
+  z-index: 2;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  background-color: #3b3a3a;
+  color: white;
+  text-align: center;
+  padding: 5px 5px;
+  border-radius: 6px;
+  position: absolute;
+  width: 70%;
+  bottom: 100%;
+  left: 50%;
+  margin-left: -15%;
+  box-shadow: var(--shadow);
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+}
+
+.section {
+  display: flex;
+  flex-direction: column;
+}
+
+@media only screen and (max-width: 700px) {
+  .content {
+    /* justify-items: center; */
+    grid-template-areas:
+      "b"
+      "c";
+    grid-template-columns: 100%;
+    padding: 1rem;
+  }
+
+  .cell {
+    font-size: 0.825rem;
+    font-weight: lighter;
+  }
+}

@@ -1,0 +1,230 @@
+:root {
+  --background-color: #2d2d2d;
+  --color-primary: #4a7b9d;
+  --color-primary-lighter: #acc5d8;
+  --color-secondary: #aef6c7;
+  --color-accent: #a63446;
+  --shadow: 0 6px 8px rgba(0, 0, 0, 0.1);
+  --border-soft: 5px;
+  --border-round: 100px;
+
+  --space-xs: 0.25rem;
+  --space-s: 0.5rem;
+  --space-m: 1rem;
+  --space-l: 1.5rem;
+}
+
+body {
+  box-sizing: border-box;
+  background-color: var(--background-color);
+  font-family: "Montserrat", sans-serif;
+}
+
+.content {
+  display: flex;
+  /* justify-content: center; */
+  justify-content: space-around;
+}
+
+.board {
+  background-color: var(--color-primary);
+  box-shadow: var(--shadow);
+  flex-direction: column;
+  padding: 1.5rem;
+  border-radius: 10px;
+  z-index: 1;
+}
+.row {
+  display: flex;
+}
+.section {
+  border: 1px solid #426c8a;
+  border-radius: var(--border-soft);
+  margin: var(--space-xs);
+  margin: 0.125rem;
+  position: relative;
+}
+
+.section--row {
+  display: flex;
+}
+
+.section--row > * {
+  margin: var(--space-s);
+}
+
+.cell {
+  font-size: 1rem;
+  height: 5vmin;
+  width: 5vmin;
+  border-radius: 100px;
+  background: linear-gradient(145deg, #4f84a8, #436f8d);
+  box-shadow: 5px 5px 9px #426d8c, -5px -5px 9px #5289ae;
+  color: white;
+  font-weight: bold;
+}
+
+.cell:hover {
+  background-color: #749ebe;
+}
+
+.active {
+  box-shadow: 0px 0px 0px 3px rgba(12, 255, 97, 1) !important;
+  -webkit-box-shadow: 0px 0px 0px 3px rgba(12, 255, 97, 1) !important;
+  -moz-box-shadow: 0px 0px 0px 3px rgba(12, 255, 97, 1) !important;
+}
+
+.set {
+  border-radius: 50px;
+  background: #4a7b9d;
+  box-shadow: inset 5px 5px 9px #426d8c, inset -5px -5px 9px #5289ae;
+}
+
+.default {
+  border-radius: 50px;
+  background: #436f8e;
+  box-shadow: inset 7px 7px 14px #2f4e63, inset -7px -7px 14px #5790b9;
+}
+
+.btn {
+  padding: 0.5rem;
+  font-size: 1rem;
+  background-color: var(--color-secondary);
+  border: 2px solid var(--color-primary);
+  border-radius: var(--border-round);
+  box-shadow: var(--shadow);
+  font-family: "Montserrat", sans-serif;
+  font-weight: bold;
+  flex-grow: 1;
+}
+
+.btn:hover {
+  opacity: 0.9;
+}
+
+.btn-primary {
+  background-color: var(--color-primary);
+  border: 2px solid var(--color-secondary);
+  color: white;
+}
+
+.btn:hover {
+  opacity: 0.8;
+}
+
+.glass-background {
+  background: rgba(74, 123, 157, 0.25);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.vertical-align-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.swal2-popup {
+  background-color: rgba(74, 123, 157, 0.8);
+  backdrop-filter: blur(4px);
+  border-radius: var(--border-soft);
+}
+
+.swal-2-success > * {
+  background-color: transparent;
+}
+
+.swal2-sucess-ring {
+  border-color: var(--color-accent);
+  color: var(--color-accent);
+  background-color: var(--color-accent);
+}
+
+.swal2-title,
+.swal2-content {
+  color: white;
+}
+
+.game-control-buttons {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-direction: column;
+  padding: var(--space-m);
+}
+
+.game-control-buttons > .btn {
+  flex-grow: 1;
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+.game-speed-buttons {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.game-speed-buttons > .btn {
+  flex-grow: 1;
+  width: 100%;
+  margin-bottom: 1rem;
+  font-size: 0.75rem;
+}
+
+.section {
+  border: 1px solid var(--color-primary-lighter);
+  padding: var(--space-m);
+  margin-bottom: var(--space-m);
+}
+.tooltip {
+  position: relative;
+  display: inline-block;
+  z-index: 2;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  background-color: #3b3a3a;
+  color: white;
+  text-align: center;
+  padding: 5px 5px;
+  border-radius: 6px;
+  position: absolute;
+  width: 70%;
+  bottom: 100%;
+  left: 50%;
+  margin-left: -15%;
+  box-shadow: var(--shadow);
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+}
+
+.card {
+  background-color: RGBA(75, 124, 155, 0.8);
+  border-radius: var(--border-soft);
+  padding: var(--space-m);
+}
+.controls {
+  display: flex;
+  flex-direction: column;
+  width: 20%;
+}
+
+.header {
+  padding: 2rem 3rem;
+  color: var(--color-secondary);
+  text-align: center;
+  font-size: 2rem;
+}
+
+.controls .heading {
+  color: var(--color-secondary);
+  margin-bottom: var(--space-m);
+}
